@@ -18,6 +18,9 @@ else
   echo "Skipping ssh keygen..."
 fi
 
+# custom fonts
+curl https://raw.githubusercontent.com/jjshoots/mononoki-monospaced/main/install.sh | bash -s
+
 # install git
 echo "Installing git..."
 sudo apt update
