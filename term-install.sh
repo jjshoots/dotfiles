@@ -1,11 +1,14 @@
 #!/bin/bash
 
+# first, upgrade everything
+sudo apt update
+sudo apt upgrade -y
+
 # custom fonts
 curl https://raw.githubusercontent.com/jjshoots/mononoki-monospaced/main/install.sh | bash -s
 
 # install git
 echo "Installing git..."
-sudo apt update
 sudo apt install git
 
 # clean our install directory
