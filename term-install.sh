@@ -1,23 +1,5 @@
 #!/bin/bash
 
-# conditionally generate ssh keys
-read -p "Generate new ssh keys? (y/n): " gen_keys
-if [ "$user_input" = "y" ]; then
-  # sshkey for git
-  echo "Performing ssh keygen using ed25519 for git..."
-  ssh-keygen -t ed25519 -C $hostname -f /.ssh/ed_25519 -q -N ""
-
-  # print out the ssh public key to be added to git manually
-  echo "--------------------------------------------"
-  cat ~/.ssh/ed_25519.pub
-  echo "--------------------------------------------"
-  echo "Please add the above ssh key to https://github.com/settings/ssh/new"
-  echo "Press ENTER when done..."
-  read -l _
-else
-  echo "Skipping ssh keygen..."
-fi
-
 # custom fonts
 curl https://raw.githubusercontent.com/jjshoots/mononoki-monospaced/main/install.sh | bash -s
 
@@ -50,3 +32,21 @@ cd ~/.config/tmux
 ./install.sh
 cd ~/.config/fish
 ./install.sh
+
+# conditionally generate ssh keys
+read -p "Generate new ssh keys? (y/n): " gen_keys
+if [ "$user_input" = "y" ]; then
+  # sshkey for git
+  echo "Performing ssh keygen using ed25519 for git..."
+  ssh-keygen -t ed25519 -C $hostname -f /.ssh/ed_25519 -q -N ""
+
+  # print out the ssh public key to be added to git manually
+  echo "--------------------------------------------"
+  cat ~/.ssh/ed_25519.pub
+  echo "--------------------------------------------"
+  echo "Please add the above ssh key to https://github.com/settings/ssh/new"
+  echo "Press ENTER when done..."
+  read -l _
+else
+  echo "Skipping ssh keygen..."
+fi
