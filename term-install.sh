@@ -12,18 +12,17 @@ echo "Installing git..."
 sudo apt install git
 
 # clean our install directory
-rm -rf kitty
-rm -rf nvim
-rm -rf tmux
-rm -rf fish
+rm -rf ~/.config/kitty
+rm -rf ~/.config/nvim
+rm -rf ~/.config/tmux
+rm -rf ~/.config/fish
 
 # install all my dotfiles, this installs things using HTTPs so no ssh
 echo "Cloning all dotfiles"
-cd ~/.config/
-git clone git@github.com:jjshoots/kitty_dotfiles.git kitty
-git clone git@github.com:jjshoots/nvim_dotfiles.git nvim
-git clone git@github.com:jjshoots/tmux_dotfiles.git tmux
-git clone git@github.com:jjshoots/fish_dotfiles.git fish
+git clone git@github.com:jjshoots/kitty_dotfiles.git ~/.config/kitty
+git clone git@github.com:jjshoots/nvim_dotfiles.git ~/.config/nvim
+git clone git@github.com:jjshoots/tmux_dotfiles.git ~/.config/tmux
+git clone git@github.com:jjshoots/fish_dotfiles.git ~/.config/fish
 
 # install everything
 echo "Installing dotfiles..."
