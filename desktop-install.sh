@@ -17,7 +17,6 @@ cd -
 git clone https://github.com/jjshoots/tokyonight_dark.git /tmp/tokyonight_dark
 mkdir -p ~/.themes
 mv /tmp/tokyonight_dark ~/.themes/
-cd -
 
 echo "Install user themes from here: https://extensions.gnome.org/extension/19/user-themes/"
 echo "Select 'tokyonight_dark theme' in shell extensions"
