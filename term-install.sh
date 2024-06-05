@@ -35,8 +35,14 @@ cd ~/.config/tmux
 cd ~/.config/fish
 ./install.sh
 
+# conditionally set default terminal as fish
+read -p "Set default terminal as fish? (y/n): " user_input
+if [ "$user_input" = "y" ]; then
+  chsh -s $(which fish)
+fi
+
 # conditionally generate ssh keys
-read -p "Generate new ssh keys? (y/n): " gen_keys
+read -p "Generate new ssh keys? (y/n): " user_input
 if [ "$user_input" = "y" ]; then
   # sshkey for git
   echo "Performing ssh keygen using ed25519 for git..."
