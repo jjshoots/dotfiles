@@ -38,7 +38,7 @@ cd ~/.config/fish
 # conditionally set default terminal as fish
 read -p "Set default terminal as fish? (y/n): " user_input
 if [ "$user_input" = "y" ]; then
-  chsh -s $(which fish)
+  chsh -s "$(which fish)"
 fi
 
 # conditionally generate ssh keys
