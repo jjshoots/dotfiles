@@ -8,8 +8,8 @@ sudo apt install git node-typescript make gnome-tweaks gnome-shell-extensions
 echo "Installing Pop! shell..."
 git clone https://github.com/pop-os/shell.git /tmp/shell
 cd /tmp/shell
-git fetch origin master_jammy
-git checkout master_jammy
+git fetch origin master_noble
+git checkout master_noble
 make local-install
 cd -
 
