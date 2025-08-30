@@ -19,10 +19,10 @@ rm -rf ~/.config/fish
 
 # install all my dotfiles, this installs things using HTTPs so no ssh
 echo "Cloning all dotfiles"
-git clone git@github.com:jjshoots/kitty_dotfiles.git ~/.config/kitty
-git clone git@github.com:jjshoots/nvim_dotfiles.git ~/.config/nvim
-git clone git@github.com:jjshoots/tmux_dotfiles.git ~/.config/tmux
-git clone git@github.com:jjshoots/fish_dotfiles.git ~/.config/fish
+git clone https://github.com/jjshoots/kitty_dotfiles.git ~/.config/kitty
+git clone https://github.com/jjshoots/nvim_dotfiles.git ~/.config/nvim
+git clone https://github.com/jjshoots/tmux_dotfiles.git ~/.config/tmux
+git clone https://github.com/jjshoots/fish_dotfiles.git ~/.config/fish
 
 # install everything
 echo "Installing dotfiles..."
