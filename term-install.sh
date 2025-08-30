@@ -46,7 +46,7 @@ read -p "Generate new ssh keys? (y/n): " user_input
 if [ "$user_input" = "y" ]; then
   # sshkey for git
   echo "Performing ssh keygen using ed25519 for git..."
-  ssh-keygen -t ed25519 -C $hostname -f /.ssh/ed_25519 -q -N ""
+  ssh-keygen -t ed25519 -C $hostname -f /.ssh/id_ed25519 -q -N ""
 
   # print out the ssh public key to be added to git manually
   echo "--------------------------------------------"
