@@ -24,6 +24,14 @@ git clone https://github.com/jjshoots/nvim_dotfiles.git ~/.config/nvim
 git clone https://github.com/jjshoots/tmux_dotfiles.git ~/.config/tmux
 git clone https://github.com/jjshoots/fish_dotfiles.git ~/.config/fish
 
+# ~/.claude is not wiped since it can hold credentials and history,
+# so check the dotfiles out on top of whatever is already there
+mkdir -p ~/.claude
+git -C ~/.claude init -b main
+git -C ~/.claude remote add origin https://github.com/jjshoots/claude_dotfiles.git
+git -C ~/.claude fetch origin
+git -C ~/.claude checkout -f -B main origin/main
+
 # install everything
 echo "Installing dotfiles..."
 cd ~/.config/kitty
@@ -33,6 +41,8 @@ cd ~/.config/nvim
 cd ~/.config/tmux
 ./install.sh
 cd ~/.config/fish
+./install.sh
+cd ~/.claude
 ./install.sh
 
 # conditionally set default terminal as fish
